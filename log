@@ -920,3 +920,9 @@ exercises.c:49:12: error: 'numeros' defined but not used [-Werror=unused-functio
 cc1.exe: all warnings being treated as errors
 Compilation failed
 79c2010
+Wed, Mar 19, 2025  8:53:33 AM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|4
+total_score: 10/70
+8506352
