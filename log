@@ -32,3 +32,13 @@ Wed, Mar 19, 2025  8:40:32 AM:
  tests:  0|5
 total_score: 0/70
 678b115
+Wed, Mar 19, 2025  8:41:11 AM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:48:18: error: lvalue required as unary '&' operand
+       pushBack(L,&(int *)k);
+                  ^
+Compilation failed
+cba2334
