@@ -360,3 +360,143 @@ exercises.c:49:12: error: 'numeros' defined but not used [-Werror=unused-functio
 cc1.exe: all warnings being treated as errors
 Compilation failed
 0273035
+Wed, Mar 19, 2025  8:51:23 AM: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'numeros':
+exercises.c:49:28: error: expected declaration specifiers before 'malloc'
+       int *numeros (int *) malloc(sizeof(int));
+                            ^~~~~~
+exercises.c:50:7: error: expected declaration specifiers before '*' token
+       *numeros = k;
+       ^
+exercises.c:51:7: error: expected declaration specifiers before 'pushBack'
+       pushBack(L,&umeros);
+       ^~~~~~~~
+exercises.c:53:4: error: expected declaration specifiers before '}' token
+    }
+    ^
+exercises.c:54:4: error: expected declaration specifiers before 'return'
+    return L;
+    ^~~~~~
+exercises.c:55:1: error: expected declaration specifiers before '}' token
+ }
+ ^
+exercises.c:62:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int sumaLista(List *L) {
+                        ^
+exercises.c:80:40: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void eliminaElementos(List*L, int elem){
+                                        ^
+exercises.c:91:39: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void copia_pila(Stack* P1, Stack* P2) {
+                                       ^
+exercises.c:101:41: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int parentesisBalanceados(char *cadena) {
+                                         ^
+In file included from test.c:6:0:
+arraylist.c:6:1: error: empty declaration [-Werror]
+ struct List {
+ ^~~~~~
+arraylist.c:12:14: error: storage class specified for parameter 'List'
+ typedef List List;
+              ^~~~
+arraylist.c:14:1: error: expected declaration specifiers before 'List'
+ List* create_list() {
+ ^~~~
+arraylist.c:21:13: error: expected declaration specifiers or '...' before 'List'
+ void* first(List *L) {
+             ^~~~
+arraylist.c:29:12: error: expected declaration specifiers or '...' before 'List'
+ void* next(List *L) {
+            ^~~~
+arraylist.c:37:16: error: expected declaration specifiers or '...' before 'List'
+ void pushFront(List *L, void *dato) {
+                ^~~~
+arraylist.c:50:15: error: expected declaration specifiers or '...' before 'List'
+ void pushBack(List *L, void *dato) {
+               ^~~~
+arraylist.c:55:18: error: expected declaration specifiers or '...' before 'List'
+ void pushCurrent(List *L, void *dato) {
+                  ^~~~
+arraylist.c:68:16: error: expected declaration specifiers or '...' before 'List'
+ void* popFront(List *L) {
+                ^~~~
+arraylist.c:80:15: error: expected declaration specifiers or '...' before 'List'
+ void* popBack(List *L) {
+               ^~~~
+arraylist.c:89:18: error: expected declaration specifiers or '...' before 'List'
+ void* popCurrent(List *L) {
+                  ^~~~
+arraylist.c:102:14: error: expected declaration specifiers or '...' before 'List'
+ int get_size(List *L) {
+              ^~~~
+test.c:9:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ char * _strdup2(const char * str) {
+                                   ^
+test.c:16:1: error: parameter 'test_id' is initialized
+ int test_id = -1;
+ ^~~
+test.c:19:14: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int success(){
+              ^
+test.c:24:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void err_msg(char* msg){
+                        ^
+test.c:31:23: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void ok_msg(char* msg){
+                       ^
+test.c:37:25: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void info_msg(char* msg){
+                         ^
+test.c:42:75: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int test_suite(int(*test)(), char* msg, int max_score, int id, int req_id){
+                                                                           ^
+test.c:60:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int test_crea_lista(){
+                      ^
+test.c:84:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int test_suma_lista(){
+                      ^
+test.c:112:28: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int test_elimina_elemento(){
+                            ^
+test.c:158:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int test_copia_pila(){
+                      ^
+test.c:214:34: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int test_parentesis_balanceados(){
+                                  ^
+test.c:253:36: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int main( int argc, char *argv[] ) {
+                                    ^
+In file included from test.c:5:0:
+exercises.c:49:12: error: old-style parameter declarations in prototyped function definition
+       int *numeros (int *) malloc(sizeof(int));
+            ^~~~~~~
+exercises.c:49:7: error: parameter name omitted
+       int *numeros (int *) malloc(sizeof(int));
+       ^~~
+test.c:271:1: error: expected '{' at end of input
+ }
+ ^
+test.c:271:1: error: no return statement in function returning non-void [-Werror=return-type]
+test.c: In function 'crea_lista':
+test.c:271:1: error: expected declaration or statement at end of input
+test.c:271:1: error: expected declaration or statement at end of input
+In file included from test.c:5:0:
+exercises.c:45:10: error: unused variable 'L' [-Werror=unused-variable]
+    List* L = create_list();
+          ^
+test.c:271:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+In file included from test.c:5:0:
+At top level:
+exercises.c:49:12: error: 'numeros' defined but not used [-Werror=unused-function]
+       int *numeros (int *) malloc(sizeof(int));
+            ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+57d55ea
