@@ -105,7 +105,7 @@ void copia_pila(Stack* P1, Stack* P2) {
    while(top(aux) != -1){
       int elemento = top(aux);
       push(P1,elemento);
-      push(P2,elemento);
+      //push(P2,elemento);
       pop(aux);
    }
 
@@ -119,19 +119,16 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   int izquierda = 0;
-   int derecha = 0;
+   /*Stack pila = create_stack();
+   
+   for(int k = 0; cadena[k] != '\0'; k++){
+      char c = cadena[k];
 
-   for(size_t k = 0; cadena[k] != '\0'; k++){
-      if (cadena[k] == '{') izquierda++;
-      else if (cadena[k] == '[') izquierda++;
-      else if (cadena[k] == '(') izquierda++;
+      if (c == '{' || c == '[' || c == '('){
+         push(&pila, c);
+      }
+   }*/
 
-      if (cadena[k] == '}') derecha++;
-      else if (cadena[k] == ']') derecha++;
-      else if (cadena[k] == ')') derecha++;
-   }
-   if (izquierda == derecha) return 1;
    return 0;
 }
 
