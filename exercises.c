@@ -126,7 +126,7 @@ int parentesisBalanceados(char *cadena) {
       if (cadena[k] == '{' || cadena[k] == '[') izquierda++;
       if (cadena[k] == '}' || cadena[k] == ']') derecha++;
    }
-   if (izquierda == derecha) return 1;
+   if (izquierda == derecha) return izquierda;
    return 0;
 }
 
