@@ -46,7 +46,7 @@ List* crea_lista() {
    int variable = 1;
    for(size_t k = 1; k <= 10; k++)
    {
-      pushBack(L,variable);
+      pushBack(L,&variable);
       variable++;
    }
    return L;
