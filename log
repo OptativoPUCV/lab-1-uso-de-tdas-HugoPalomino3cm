@@ -2,3 +2,27 @@ Wed, Mar 19, 2025  8:28:45 AM:
  tests:  0|5
 total_score: 0/70
 3f6cb15
+Wed, Mar 19, 2025  8:40:11 AM: 
+ exercises.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'sumaLista':
+exercises.c:59:16: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+    int total = first(L);
+                ^~~~~
+exercises.c:60:9: error: statement with no effect [-Werror=unused-value]
+    for(L!= NULL)
+         ^
+exercises.c:60:16: error: expected ';' before ')' token
+    for(L!= NULL)
+                ^
+exercises.c:60:16: error: expected expression before ')' token
+exercises.c:62:7: error: invalid use of undefined type 'struct List'
+       total += L;
+       ^~~~~
+exercises.c:62:13: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+       total += L;
+             ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+30d616b
