@@ -2704,3 +2704,13 @@ Sat, Mar 22, 2025  6:15:19 PM:
  tests:  9|0
 total_score: 70/70
 38598e4
+Sat, Mar 22, 2025  6:16:24 PM: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:130:10: error: expected ',' or ';' before 'if'
+          if (nuevo == NULL) exit(1);
+          ^~
+Compilation failed
+7e1b3cd
