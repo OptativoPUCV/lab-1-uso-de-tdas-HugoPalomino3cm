@@ -141,7 +141,7 @@ int parentesisBalanceados(char *cadena) {
       cadena++;  
    }
 
-   int resultado = (top(s) == 0) ? 1 : 0;
+   int resultado = (top(s) == -1) ? 1 : 0;
     
    return resultado;
 }
