@@ -1990,3 +1990,14 @@ exercises.c:155:10: error: return makes integer from pointer without a cast [-We
 cc1.exe: all warnings being treated as errors
 Compilation failed
 8f0663e
+Fri, Mar 21, 2025 10:55:03 PM: 
+ exercises.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:129:16: error: 'pila' undeclared (first use in this function)
+           push(pila, data);
+                ^~~~
+exercises.c:129:16: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+57a0441
