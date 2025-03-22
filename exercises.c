@@ -138,8 +138,6 @@ int parentesisBalanceados(char *cadena) {
       cadena++;  
    }
 
-   void *resultado = top(s);
-   if(resultado == NULL) return 1;
-   return 0;
+   int resultado = (top(s) == NULL) ? 1 : 0;
 }
 

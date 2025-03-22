@@ -2433,3 +2433,30 @@ exercises.c:135:24: error: initialization makes integer from pointer without a c
 cc1.exe: all warnings being treated as errors
 Compilation failed
 057b874
+Sat, Mar 22, 2025  1:21:39 PM: 
+ exercises.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:128:18: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+          push(s, *cadena);
+                  ^
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'char'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:135:24: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+          char ultimo = pop(s);
+                        ^~~
+In file included from test.c:5:0:
+exercises.c:141:8: error: unused variable 'resultado' [-Werror=unused-variable]
+    int resultado = (top(s) == NULL) ? 1 : 0;
+        ^~~~~~~~~
+exercises.c:142:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+2dd2d9b
