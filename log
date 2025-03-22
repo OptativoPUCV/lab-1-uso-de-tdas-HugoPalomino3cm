@@ -1890,3 +1890,30 @@ exercises.c:123:10: error: unused variable 'pila' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a0134de
+Fri, Mar 21, 2025  9:32:21 PM: 
+ exercises.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:123:4: error: variable 'pila' has initializer but incomplete type
+    Stack pila = create_stack();
+    ^~~~~
+exercises.c:123:10: error: storage size of 'pila' isn't known
+    Stack pila = create_stack();
+          ^~~~
+exercises.c:129:31: error: 'intptr_t' undeclared (first use in this function)
+           push(pila, (void *)(intptr_t)c);
+                               ^~~~~~~~
+exercises.c:129:31: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:129:40: error: expected ')' before 'c'
+           push(pila, (void *)(intptr_t)c);
+                                        ^
+exercises.c:134:42: error: expected ',' or ';' before 'top'
+           char topChar = (char)(intptr_t)top(pila);
+                                          ^~~
+exercises.c:123:10: error: unused variable 'pila' [-Werror=unused-variable]
+    Stack pila = create_stack();
+          ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+8f44c74
