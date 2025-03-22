@@ -120,30 +120,21 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   int esPareja(char apertura, char cierre) {
-      return (apertura == '(' && cierre == ')') ||
-             (apertura == '[' && cierre == ']') ||
-             (apertura == '{' && cierre == '}');
-  }
-  
-  int i = 0;
-  while (cadena[i] != '\0') {
-      // Delimitadores de apertura
-      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
-          push(&pila, cadena[i]);
-      }
-      // Delimitadores de cierre
-      else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
-          if (pila.tope < 0) {  // Pila vacía antes de cerrar
-              return 0;
-          }
-          char ultimo = pop(&pila);
-          if (!esPareja(ultimo, cadena[i])) {  // No hacen pareja
-              return 0;
-          }
-      }
-      i++;
-   }
-   return (pila.tope == -1) ? 1 : 0;
+   int contador = 0;
+    
+    while (*cadena) { 
+        if (*cadena == '(' || *cadena == '[' || *cadena == '{') {
+            contador++;  
+        }
+        else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
+            contador--; 
+            
+            if (contador < 0) {
+                return 0;
+            }
+        }
+        cadena++; 
+    }
+    return (contador == 0) ? 1 : 0;
 }
 
