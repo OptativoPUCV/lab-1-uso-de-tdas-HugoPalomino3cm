@@ -120,44 +120,39 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   Stack stack = create_stack();  
+   Stack pila = create_stack();  
    
-   int largo = 0;
+   for (int k = 0; cadena[k] != '\0'; k++) {
+      char c = cadena[k];
+      if (c == '{' || c == '[' || c == '(') {
+          char *data = malloc(sizeof(char));
+          *data = c;
+          push(pila, data);  // Aquí se usa 'pila', pero no está declarada
+      } else if (c == '}' || c == ']' || c == ')') {
+          if (top(pila) == NULL) {  // Aquí también
+              return 0;
+          }
+          char *topChar = (char *)pop(pila);  // Y aquí
+          if ((c == '}' && *topChar != '{') || 
+              (c == ']' && *topChar != '[') || 
+              (c == ')' && *topChar != '(')) {
+              free(topChar);
+              return 0;
+          }
+          free(topChar);
+      }
+  }
 
-   for(size_t k = 0; cadena[k] != '\0'; k++){
-      largo++;
-   }
+  int result;
+  if (top(pila) == NULL) {  // Aquí también
+      result = 1;
+  } else {
+      result = 0;
+  }
 
-   
-   if (largo % 2 != 0) return 0;
-
-   // Recorre la cadena
-   for (size_t i = 0; cadena[i] != '\0'; i++) {
-       
-       if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[') {
-           char *data = malloc(sizeof(char)); 
-           *data = cadena[i];
-           push(&stack, data); 
-       }
-       
-       else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']') {
-           void *top_data = top(&stack); 
-           if (top_data == NULL) return 0; 
-
-           char ultimo = *(char *)top_data;  
-           pop(&stack);  
-
-           // Verifica si coincide el par
-           if (cadena[i] == ')' && ultimo != '(') return 0;
-           if (cadena[i] == '}' && ultimo != '{') return 0;
-           if (cadena[i] == ']' && ultimo != '[') return 0;
-
-           free(top_data); 
-       }
-   }
-
-   
-   void *top_data = top(&stack);
-   return (top_data == NULL) ? 1 : 0;  
+  while (top(pila) != NULL) {  // Y aquí
+      free(pop(pila));
+  }
+  return result;
 }
 
