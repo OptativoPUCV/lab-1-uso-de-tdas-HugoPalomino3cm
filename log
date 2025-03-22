@@ -2610,3 +2610,29 @@ exercises.c:135:24: error: initialization makes integer from pointer without a c
 cc1.exe: all warnings being treated as errors
 Compilation failed
 0f6a461
+Sat, Mar 22, 2025  1:29:04 PM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:128:18: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+          push(s, *cadena);
+                  ^
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'char'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:136:40: error: comparison between pointer and integer [-Werror]
+          if ((*cadena == ')' && ultimo != '(') || (*cadena == ']' && ultimo != '[') || (*cadena == '}' && ultimo != '{')) return 0;
+                                        ^~
+exercises.c:136:77: error: comparison between pointer and integer [-Werror]
+          if ((*cadena == ')' && ultimo != '(') || (*cadena == ']' && ultimo != '[') || (*cadena == '}' && ultimo != '{')) return 0;
+                                                                             ^~
+exercises.c:136:114: error: comparison between pointer and integer [-Werror]
+          if ((*cadena == ')' && ultimo != '(') || (*cadena == ']' && ultimo != '[') || (*cadena == '}' && ultimo != '{')) return 0;
+                                                                                                                  ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+4cf1146
