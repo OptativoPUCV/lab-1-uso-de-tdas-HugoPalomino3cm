@@ -133,18 +133,13 @@ int parentesisBalanceados(char *cadena) {
             return 0; 
          }
          char ultimo = pop(&s);  
-         if ((*cadena == ')' && ultimo != '(') || 
-            (*cadena == ']' && ultimo != '[') || 
-            (*cadena == '}' && ultimo != '{')) {
-            return 0;
-         }
+         if ((*cadena == ')' && ultimo != '(') || (*cadena == ']' && ultimo != '[') || (*cadena == '}' && ultimo != '{')) return 0;
       }
       cadena++;  
    }
 
-
-   int resultado = (top(s) == NULL) ? 1 : 0;
-    
-   return resultado;
+   int resultado = top(s)
+   if(resultado == NULL) return 1;
+   return 0;
 }
 
