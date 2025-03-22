@@ -2237,3 +2237,41 @@ exercises.c:146:28: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 ad1fdaf
+Sat, Mar 22, 2025  1:04:39 PM: 
+ exercises.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:128:15: error: passing argument 1 of 'push' from incompatible pointer type [-Werror=incompatible-pointer-types]
+          push(&s, *cadena);
+               ^
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'Stack * {aka struct List *}' but argument is of type 'Stack ** {aka struct List **}'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:128:19: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+          push(&s, *cadena);
+                   ^
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'char'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:135:28: error: passing argument 1 of 'pop' from incompatible pointer type [-Werror=incompatible-pointer-types]
+          char ultimo = pop(&s);
+                            ^
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:17:7: note: expected 'Stack * {aka struct List *}' but argument is of type 'Stack ** {aka struct List **}'
+ void *pop(Stack *stack) { return popFront(stack); }
+       ^~~
+In file included from test.c:5:0:
+exercises.c:135:24: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+          char ultimo = pop(&s);
+                        ^~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+e1f0420

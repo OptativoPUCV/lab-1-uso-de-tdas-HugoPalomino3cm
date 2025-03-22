@@ -129,7 +129,7 @@ int parentesisBalanceados(char *cadena) {
       }
 
       else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
-         if (top(s) == -1) {  
+         if (top(s) == NULL) {  
             return 0; 
          }
          char ultimo = pop(&s);  
@@ -143,10 +143,7 @@ int parentesisBalanceados(char *cadena) {
    }
 
 
-   int resultado = (top(s) == -1) ? 1 : 0;
-   
-
-   return resultado;
+   int resultado = (top(s) == NULL) ? 1 : 0;
     
    return resultado;
 }
