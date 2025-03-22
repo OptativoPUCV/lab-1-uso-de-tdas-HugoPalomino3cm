@@ -120,39 +120,30 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   Stack pila = create_stack();  
-   
-   for (int k = 0; cadena[k] != '\0'; k++) {
-      char c = cadena[k];
-      if (c == '{' || c == '[' || c == '(') {
-          char *data = malloc(sizeof(char));
-          *data = c;
-          push(pila, data);  // Aquí se usa 'pila', pero no está declarada
-      } else if (c == '}' || c == ']' || c == ')') {
-          if (top(pila) == NULL) {  // Aquí también
-              return 0;
-          }
-          char *topChar = (char *)pop(pila);  // Y aquí
-          if ((c == '}' && *topChar != '{') || 
-              (c == ']' && *topChar != '[') || 
-              (c == ')' && *topChar != '(')) {
-              free(topChar);
-              return 0;
-          }
-          free(topChar);
+   int esPareja(char apertura, char cierre) {
+      return (apertura == '(' && cierre == ')') ||
+             (apertura == '[' && cierre == ']') ||
+             (apertura == '{' && cierre == '}');
+  }
+  
+  int i = 0;
+  while (cadena[i] != '\0') {
+      // Delimitadores de apertura
+      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
+          push(&pila, cadena[i]);
       }
-  }
-
-  int result;
-  if (top(pila) == NULL) {  // Aquí también
-      result = 1;
-  } else {
-      result = 0;
-  }
-
-  while (top(pila) != NULL) {  // Y aquí
-      free(pop(pila));
-  }
-  return result;
+      // Delimitadores de cierre
+      else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
+          if (pila.tope < 0) {  // Pila vacía antes de cerrar
+              return 0;
+          }
+          char ultimo = pop(&pila);
+          if (!esPareja(ultimo, cadena[i])) {  // No hacen pareja
+              return 0;
+          }
+      }
+      i++;
+   }
+   return (pila.tope == -1) ? 1 : 0;
 }
 
