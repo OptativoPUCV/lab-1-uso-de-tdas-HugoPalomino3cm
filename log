@@ -1961,3 +1961,14 @@ exercises.c:134:42: error: expected ',' or ';' before 'top'
                                           ^~~
 Compilation failed
 b9eccaf
+Fri, Mar 21, 2025 10:42:01 PM: 
+ exercises.c | 30 ++++++++++++++++++++----------
+ 1 file changed, 20 insertions(+), 10 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:129:16: error: 'pila' undeclared (first use in this function)
+           push(pila, data);
+                ^~~~
+exercises.c:129:16: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+850dec2
