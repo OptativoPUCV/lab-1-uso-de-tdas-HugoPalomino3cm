@@ -2020,3 +2020,18 @@ exercises.c:123:10: error: unused variable 'stack' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7296abe
+Fri, Mar 21, 2025 10:59:56 PM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:123:4: error: variable 'stack' has initializer but incomplete type
+    Stack stack = create_stack();
+    ^~~~~
+exercises.c:123:10: error: storage size of 'stack' isn't known
+    Stack stack = create_stack();
+          ^~~~~
+exercises.c:123:10: error: unused variable 'stack' [-Werror=unused-variable]
+cc1.exe: all warnings being treated as errors
+Compilation failed
+de9f521
