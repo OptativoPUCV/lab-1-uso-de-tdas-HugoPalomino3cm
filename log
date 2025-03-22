@@ -2001,3 +2001,22 @@ exercises.c:129:16: error: 'pila' undeclared (first use in this function)
 exercises.c:129:16: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 57a0441
+Fri, Mar 21, 2025 10:58:53 PM: 
+ exercises.c | 59 ++++++++++++++++++++++++++++++++---------------------------
+ 1 file changed, 32 insertions(+), 27 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:123:4: error: variable 'stack' has initializer but incomplete type
+    Stack stack = {0};
+    ^~~~~
+exercises.c:123:19: error: excess elements in struct initializer [-Werror]
+    Stack stack = {0};
+                   ^
+exercises.c:123:19: note: (near initialization for 'stack')
+exercises.c:123:10: error: storage size of 'stack' isn't known
+    Stack stack = {0};
+          ^~~~~
+exercises.c:123:10: error: unused variable 'stack' [-Werror=unused-variable]
+cc1.exe: all warnings being treated as errors
+Compilation failed
+7296abe

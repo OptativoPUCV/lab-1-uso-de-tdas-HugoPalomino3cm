@@ -120,39 +120,44 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   for (int k = 0; cadena[k] != '\0'; k++) {
-      char c = cadena[k];
+   Stack stack = {0};  
+   
+   int largo = 0;
 
-      if (c == '{' || c == '[' || c == '(') {
-          char *data = malloc(sizeof(char));
-          *data = c;
-          push(pila, data);
-      } else if (c == '}' || c == ']' || c == ')') {
-          if (top(pila) == NULL) {
-              return 0;
-          }
-          char *topChar = (char *)pop(pila);
-          if ((c == '}' && *topChar != '{') || 
-              (c == ']' && *topChar != '[') || 
-              (c == ')' && *topChar != '(')) {
-              free(topChar);
-              return 0;
-          }
-          free(topChar);
-      }
-  }
+   for(size_t k = 0; cadena[k] != '\0'; k++){
+      largo++;
+   }
+   
+   
+   if (largo % 2 != 0) return 0;
 
-  int result;
-  if (top(pila) == NULL) {
-      result = 1; 
-  } else {
-      result = 0;
-  }
+   // Recorre la cadena
+   for (size_t i = 0; cadena[i] != '\0'; i++) {
+       
+       if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[') {
+           char *data = malloc(sizeof(char)); 
+           *data = cadena[i];
+           push(&stack, data); 
+       }
+       
+       else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']') {
+           void *top_data = top(&stack); 
+           if (top_data == NULL) return 0; 
 
-  while (top(pila) != NULL) {
-      free(pop(pila));
-  }
+           char ultimo = *(char *)top_data;  
+           pop(&stack);  
 
-  return result;
+           // Verifica si coincide el par
+           if (cadena[i] == ')' && ultimo != '(') return 0;
+           if (cadena[i] == '}' && ultimo != '{') return 0;
+           if (cadena[i] == ']' && ultimo != '[') return 0;
+
+           free(top_data); 
+       }
+   }
+
+   
+   void *top_data = top(&stack);
+   return (top_data == NULL) ? 1 : 0;  
 }
 
