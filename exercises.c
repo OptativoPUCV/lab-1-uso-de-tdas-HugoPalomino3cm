@@ -47,6 +47,7 @@ List* crea_lista() {
    for(size_t k = 1; k <= 10; k++)
    {
       int *numero = (int *) malloc(sizeof(int));
+      if (numero == NULL) exit(1);
       (*numero) = k;
       pushBack(L,&(*numero));
    }
