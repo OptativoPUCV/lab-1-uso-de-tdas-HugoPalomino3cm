@@ -1857,3 +1857,36 @@ Thu, Mar 20, 2025 11:42:13 PM:
  tests:  4|1
 total_score: 50/70
 43f33f3
+Fri, Mar 21, 2025  9:30:43 PM: 
+ exercises.c | 20 +++++++++++++++++---
+ 1 file changed, 17 insertions(+), 3 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:123:4: error: variable 'pila' has initializer but incomplete type
+    Stack pila = create_stack();
+    ^~~~~
+exercises.c:123:10: error: storage size of 'pila' isn't known
+    Stack pila = create_stack();
+          ^~~~
+exercises.c:129:33: error: 'intptr_t' undeclared (first use in this function)
+             push(pila, (void *)(intptr_t)c);
+                                 ^~~~~~~~
+exercises.c:129:33: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:129:42: error: expected ')' before 'c'
+             push(pila, (void *)(intptr_t)c);
+                                          ^
+exercises.c:136:44: error: expected ',' or ';' before 'top'
+             char topChar = (char)(intptr_t)top(pila);
+                                            ^~~
+exercises.c:139:13: error: expected ';' before 'if'
+             if ((c == '}' && topChar != '{') ||
+             ^~
+exercises.c:136:18: error: unused variable 'topChar' [-Werror=unused-variable]
+             char topChar = (char)(intptr_t)top(pila);
+                  ^~~~~~~
+exercises.c:123:10: error: unused variable 'pila' [-Werror=unused-variable]
+    Stack pila = create_stack();
+          ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+a0134de
