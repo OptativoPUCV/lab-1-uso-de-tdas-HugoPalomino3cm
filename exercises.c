@@ -132,7 +132,7 @@ int parentesisBalanceados(char *cadena) {
          if (top(s) == NULL) {  
             return 0; 
          }
-         char ultimo = pop(s);  
+         char ultimo = (char)(uintptr_t)pop(s);
          if ((*cadena == ')' && ultimo != '(') || (*cadena == ']' && ultimo != '[') || (*cadena == '}' && ultimo != '{')) return 0;
       }
       cadena++;  
